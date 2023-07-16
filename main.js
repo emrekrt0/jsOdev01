@@ -29,13 +29,16 @@ addToDoList('Uyu',false);
 
 //ToDoList Silme Baslangic
 //Kullanıcının istediği veriyi silmesi
-function removeTask(task, isComplete) {
-    for (let i = 0; i < toDos.length; i++) {
-        if (toDos[i] === task && isComplete === false || isComplete === true) {
-          toDos.splice(i, 1);
-            }
-        }
-    }
+function removeTask(taskIndex) {
+        toDos.splice(taskIndex,1);
+}
+function taskIndex() {
+    let index = 0;    
+    for (const tasks of toDos) {
+        console.log(` ${index} index numarasındaki görev: ${tasks.task}`);
+        index++;
+      }
+}
 //ToDoList Sondan Silme
 function toDoDeleteLastItem() {
     toDos.pop();
